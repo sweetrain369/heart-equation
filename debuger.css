@@ -1,0 +1,16 @@
+main{
+    border:solid 1px black;
+}
+canvas{
+    border:solid 1px white;
+}
+
+.sliders {
+    border:solid 1px blue;
+}
+
+.row > div {
+    border:solid 1px red;
+    padding-left: 0px;
+    padding-right: 0px;
+}
