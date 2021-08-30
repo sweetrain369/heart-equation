@@ -1,0 +1,260 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="heartLogo.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="heart.js"></script>
+        <style>
+            body{
+                background-color: white;
+                font-family: 'Merriweather Sans', sans-serif;
+            }
+            main{
+                text-align:center;
+            }
+            .center {
+                position: relative;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+            }
+
+            .center-l {
+                position: relative;
+                left:50%;
+                top:30%;
+                transform:translate(-50%, -50%);
+            }
+
+            .collection{
+                width:20%;
+                right:-80%;
+            }
+            .slider-container {
+                height: 15px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .slider {
+                width: 700px;
+                height: 15px;
+                -webkit-appearance: none;
+                background-color: #fd7897;
+                border-radius: 5px;
+                outline: none;
+                margin: auto;
+            }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .slider::-webkit-slider-thumb:hover {
+                box-shadow: 0 0 0 3px #fd7897,
+                            0 0 0 6px white;
+            }
+
+            .slider:active::-webkit-slider-thumb {
+                box-shadow: 0 0 0 3px #fd7897,
+                            0 0 0 6px white;
+            }
+
+            .slider-container {
+                text-align: center;
+                margin:20px 0px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .content {
+                margin:0px;
+            }
+
+            .content div {
+                text-align: center;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            nav span {
+                color: red;
+                font-weight: 700;
+                font-size: 30px;
+                font-family: 'Fredoka One';
+            }
+            .x-exp, .y-exp-1, .y-exp-2 {
+                text-align: center;
+                font-size:20px;
+                color:red;
+            }
+            .none {
+                display: none;
+            }
+            .bg-light{
+                background-color: transparent !important;
+            }
+
+            .t-center {
+                text-align: center;
+            }
+            .col-md-8 {
+                 border:10px black solid;
+                 border-right: solid 3px green;
+            }
+            .hid-var {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 30px;
+            }
+            .MathJax {
+                display : none;
+            }
+            .display-contents {
+                display : contents;
+            }
+            .container {
+                width: 100%;
+                height: 85%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .p-3 {
+                padding : 7rem!important;
+            }
+            .border {
+                border : 5px solid #dee2e6!important; 
+            }
+            .p5Canvas {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            canvas {
+                border : solid  #C68A12 5px;
+                padding : 30px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <nav class="navbar" role="banner">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="chartjs_test.html">
+                <img src="./like.svg" alt="" width="30" height="27" class="d-inline-block align-text-top">
+                <span>Heart Signal</span> </a>
+        </nav>
+        <div class="container">
+            <div class="text">
+              <ul>
+                <li>Friend/mutual: *Uploads artwork*</li>
+                <li>Me:</li>
+              </ul>
+            </div>
+            <div class="cat" onclick="hello()">
+              <div class="catHead"></div>
+              <div class="catEars">
+                <span class="rightEar"></span>
+              </div>
+              <div class="face">
+                <span class="mouth"></span>
+              </div>
+              <div id="leftPaw" class="leftPaw">
+                <span id="paws" class="paws">
+                    <span id="circles" class="circles"></span>
+                </span>
+              </div>
+              <div id="rightPaw" class="rightPaw">
+                <span id="rpaws" class="paws">
+                              <span id="rcircles" class="circles"></span>
+                </span>
+              </div>
+            </div>
+            <div class="surface">
+              <span><i id="retweet" class="fas fa-retweet"></i></span>
+              <span><i id="heart" class="rotate fas fa-heart"></i></span>
+              <span class="author"><a href="https://twitter.com/RamiroSchmarimo">@RamiroSchmarimo</a></span>
+            </div>
+          </div>
+                <main></main>
+              </div>
+                <div class="p-3 border bg-light">
+                    <div class="col col-sm-4 col-12 col-xs-12 t-center display-contents">
+                        <p class="x-exp">
+                            <span class="hid-var" id="A" var="A"> x = A sin^3(t) </span> 
+                        </p>
+                        <p class="y-exp-1">
+                            <span class="hid-var" id="B" var="B"> y = B cos(t)</span>
+                        </p>
+                        <p class="y-exp-2">
+                            <span class="hid-var" id="C" var="C"> Ccos(2t)-2cos(3t)-cos(4t) </span>
+                            
+                        </p>
+                    </div>
+                    <div>
+                        <div class="p-3 border1 bg-light">
+                                <div class='sliders center display-contents'>
+                                    <div class="slider-container">
+                                        <input type="range" min="0" max="100" value="50" class="slider" id="slider" var="A">
+                                    </div>
+                                    <div class="slider-container">
+                                        <input type="range" min="0" max="100" value="50" class="slider" id="slider" var="B">
+                                    </div>
+                                    <div class="slider-container">
+                                        <input type="range" min="0" max="100" value="50" class="slider" id="slider" var="C">
+                                    </div>
+
+                        </div>
+                        
+                </div>
+            </div>
+
+                </div>
+              </div>
+                   
+          </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://unpkg.com/mathjs@9.3.0/lib/browser/math.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <script src="heartDraw.js"></script>
+        <script src="latex.js"></script>
+        <script src="writeExp.js"></script>
+        <script src="kakaoShare.js"></script>
+        <script>
+            text2Latex('.x-exp');
+            text2Latex('.y-exp-1');
+            text2Latex('.y-exp-2');
+
+            var slider = document.getElementById("slider");
+            var heart = document.getElementById("heart");
+            
+            /*heart.style.backgroundPosition = "0 " + "-" + slider.value + "px";
+            slider.oninput = function() {
+                heart.style.backgroundPosition = "0 " + "-" + slider.value + "px";
+            }*/
+
+            /* ----------------- slider 클래스를 가진 요소에 event listner 를 붙인다 -------------------- */ 
+            /* ========== function(event) -> 특정 이벤트가 날려준 이벤트를 받기 위해 만들어짐 ========= 
+               ========== event -> 발생 이벤트 ============ 
+            */ 
+        </script>
+    </body>
+    
+</html>
